@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>购物车</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			#Edit {
+				font-size: 15px;
+				padding-top: 15px;
+				color: #E02D26;
+			}
+			
+			.mui-icon-checkmarkempty {
+				font-size: 20px;
+				color: white;
+				border-radius: 50%;
+				border: 1px solid #8f8f94;
+			}
+			
+			.mui-icon-checkmarkempty:hover {
+				color: white;
+			}
+			
+			.footer {
+				border-top: 1px solid #E0E0E0;
+				width: 100%;
+				height: 60px;
+				margin: 0 auto;
+				background: white;
+				position: fixed;
+				bottom: 0px;
+			}
+			
+			.footer-left {
+				width: 30%;
+				float: left;
+				height: 60px;
+				line-height: 60px;
+				text-align: left;
+				padding-left: 10px;
+				padding-right: 30px;
+			}
+			
+			.footer-center {
+				width: 40%;
+				float: left;
+				height: 60px;
+				text-align: right;
+			}
+			
+			.footer-center-top {
+				padding-right: 10px;
+				margin-top: 10px;
+			}
+			
+			.footer-center-top-left {
+				font-size: 15px;
+				color: #E02D26;
+			}
+			
+			.footer-center-top-left:hover {
+				color: #E02D26;
+			}
+			
+			.footer-center-top-right {
+				font-size: 15px;
+				color: #E02D26;
+			}
+			
+			.footer-center-top-right:hover {
+				color: #E02D26;
+			}
+			
+			.footer-center-bottom {
+				padding-right: 10px;
+				font-size: 13px;
+			}
+			
+			.footer-right {
+				width: 30%;
+				float: left;
+				height: 60px;
+				text-align: center;
+				line-height: 60px;
+				color: white;
+				background: #E02D26;
+			}
+			
+			.count {
+				color: white;
+			}
+			
+			.count:hover {
+				color: white;
+			}
+			
+			.footer-left1 {
+				width: 20px;
+				height: 20px;
+			}
+			
+			.footer-left2 {
+				font-size: 13px;
+				color: black;
+			}
+			
+			.footer-left2:hover {
+				color: black;
+			}
+			
+			.mui-table-view {
+				background: none;
+			}
+			
+			.ShopAll {
+				margin-top: 10px;
+				/*margin-bottom: 5px;*/
+			}
+			
+			.mui-content>.mui-table-view:first-child {
+				margin-top: 0px;
+			}
+			
+			.mui-table-view:before {
+				height: 0px;
+			}
+			
+			.mui-table-view:after {
+				height: 0px;
+			}
+			
+			.mui-table-view-cell {
+				padding: 0px;
+			}
+			
+			.mui-table-view-cell.mui-active {
+				background: none;
+			}
+			
+			.mui-table-view-cell:after {
+				height: 0px;
+			}
+			
+			.BoxItemTop {
+				height: 40px;
+				border-bottom: 1px solid #F8F7F7;
+				background: white;
+			}
+			
+			.chk {
+				width: 20px;
+				height: 20px;
+				margin-left: 10px;
+				margin-top: 10px;
+			}
+			
+			.BoxItemTopShopName {
+				font-size: 13px;
+				color: black;
+			}
+			
+			.BoxItemTopShopName:hover {
+				color: black;
+			}
+			
+			.BoxItemTopRightIcon {
+				font-size: 14px;
+				color: black;
+			}
+			
+			.BoxItemTopRightIcon:hover {
+				color: black;
+			}
+			
+			.mui-table-view-cell>.mui-slider-left>.mui-btn,
+			.mui-table-view-cell>.mui-slider-right>.mui-btn.btn_del {
+				background: #E02D26;
+				color: white;
+			}
+			
+			.mui-table-view-cell>.mui-slider-left>.mui-btn,
+			.mui-table-view-cell>.mui-slider-right>.mui-btn.btn_Shoucang {
+				background: #EEEFEE;
+				color: #000000;
+			}
+			
+			.BoxItemBottom {
+				background: white;
+				overflow: hidden;
+			}
+			
+			.BoxItemBottomLeft {
+				width: 40px;
+				float: left;
+			}
+			
+			.chks {
+				width: 20px;
+				height: 20px;
+				margin-left: 10px;
+				margin-top: 50px;
+			}
+			
+			.BoxItemBottomRight {
+				float: left;
+			}
+			
+			.BoxItemBottomRightImg {
+				height: 100px;
+				width: 100px;
+				margin-top: 10px;
+				float: left;
+			}
+			
+			.BoxItemBottomRightDetails {
+				float: left;
+			}
+			
+			.BoxItemBottomRightDetailsName {
+				font-size: 12px;
+				margin-top: 10px;
+				margin-left: 10px;
+			}
+			
+			.BoxItemBottomRightDetailsGuige {
+				font-size: 12px;
+				margin-top: 5px;
+				margin-left: 10px;
+				margin-right: 10px;
+				background: #F8F7F7;
+			}
+			
+			.BoxItemBottomRightDetailsGuigeDown {
+				font-size: 15px;
+				color: black;
+				margin-top: 4px;
+			}
+			
+			.BoxItemBottomRightDetailsGuigeDown:hover {
+				color: black;
+			}
+			
+			.BoxItemBottomRightDetailsPrice {
+				height: 40px;
+			}
+			
+			.BoxItemBottomRightDetailsMoney {
+				font-size: 12px;
+				color: #E02D26;
+				margin-left: 10px;
+				line-height: 40px;
+			}
+			
+			.BoxItemBottomRightDetailsMoney:hover {
+				color: #E02D26;
+			}
+			
+			.btn_add {
+				font-size: 20px;
+				color: #959595;
+				border: 1px solid #959595;
+				display: inline-block;
+				width: 25px;
+				height: 25px;
+				text-align: center;
+				border-radius: 3px;
+				margin-top: 7.5px;
+				line-height: 20px;
+				margin-right: 10px;
+				margin-left: 1px;
+			}
+			
+			.btn_add:hover {
+				color: #959595;
+			}
+			
+			input[type=number] {
+				color: #959595;
+				border: 1px solid #959595;
+				width: 30px;
+				padding: 0px 0px;
+				text-align: center;
+				height: 25px;
+				border-radius: 3px;
+				font-size: 12px;
+				margin-top: 7.5px;
+				margin-left: 1px;
+			}
+			
+			.btn_jian {
+				font-size: 20px;
+				color: #959595;
+				border: 1px solid #959595;
+				display: inline-block;
+				width: 25px;
+				height: 25px;
+				text-align: center;
+				border-radius: 3px;
+				margin-top: 7.5px;
+				margin-left: 1px
+			}
+			
+			.btn_jian:hover {
+				color: #959595;
+			}
+			
+			.selectAll {
+				font-size: 20px;
+				color: white;
+				background: #E02D26;
+				border-radius: 50%;
+				border: 0px;
+			}
+			
+			.selectPrice {
+				font-size: 20px;
+				color: white;
+				background: #E02D26;
+				border-radius: 50%;
+				border: 1px solid white;
+			}
+			
+			#sheet3 {
+				background: white;
+			}
+			
+			.goPingdanImg {
+				width: 100px;
+				height: 100px;
+				float: left;
+				margin-left: 10px;
+				border-radius: 5px;
+				margin-top: -30px;
+				border: 1px solid white;
+			}
+			
+			.goPingdanDiv {
+				min-height: 70px;
+				float: left;
+				font-size: 13px;
+				margin-left: 10px;
+				margin-top: 10px;
+			}
+			
+			.goPingdanMoney {
+				color: #E02D26;
+				font-size: 15px;
+			}
+			
+			.goPingdanSelectKuanshi {
+				height: auto;
+			}
+			
+			.goPingdanKuanshi {
+				border-top: 1px solid #f5f5f5;
+				width: 100%;
+				float: left;
+				background: white;
+			}
+			
+			.goPingdanKuanshiItem {
+				float: left;
+				background: #f5f5f5;
+				color: black;
+				font-size: 11px;
+				padding: 3px;
+				margin: 5px 5px 0px 10px;
+				border-radius: 5px;
+			}
+			
+			.goPingdanKuanshiItem-Active {
+				float: left;
+				background: #E02D26;
+				color: white;
+				font-size: 12px;
+				padding: 3px;
+				margin: 5px 5px 0px 10px;
+				border-radius: 5px;
+			}
+			
+			.goPingdanNumDiv {
+				border-top: 1px solid #f5f5f5;
+				border-bottom: 1px solid #f5f5f5;
+				width: 100%;
+				float: left;
+				background: white;
+				height: 50px;
+				line-height: 50px;
+			}
+			
+			.goPingdanNumFont {
+				font-size: 13px;
+				margin-left: 10px;
+				float: left;
+			}
+			
+			.goPingdanNumFontOperation {
+				float: right;
+				margin-right: 10px;
+			}
+			
+			.goPingdanNumDel {
+				float: left;
+				font-size: 13px;
+				width: 30px;
+				height: 20px;
+				text-align: center;
+				background: #f2f2f2;
+				line-height: 20px;
+				margin-top: 15px;
+			}
+			
+			.goPingdanNumContent {
+				float: left;
+				font-size: 13px;
+				width: 50px;
+				height: 20px;
+				text-align: center;
+				background: #f2f2f2;
+				line-height: 20px;
+				margin-top: 15px;
+			}
+			
+			.goPingdanNumAdd {
+				float: left;
+				font-size: 13px;
+				width: 30px;
+				height: 20px;
+				text-align: center;
+				background: #e0e0e0;
+				margin-top: 15px;
+				line-height: 20px;
+			}
+			
+			.goPingdanBtnDiv {
+				height: 100px;
+				background: white;
+				float: left;
+				background: white;
+				width: 100%;
+				text-align: center;
+			}
+			
+			.goPingdanBtn {
+				width: 95%;
+				font-size: 15px;
+				background: #E02D26;
+				color: white;
+				margin: 0px auto;
+				height: 40px;
+				line-height: 40px;
+				margin-top: 30px;
+				border-radius: 5px;
+			}
+		</style>
+	</head>
+ 
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">购物车</h1>
+			<!--<a id="Edit" class="mui-icon mui-pull-right">编辑</a>-->
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<div class="BoxItemTop ShopAll" data-index="1">
+					<a class="chk mui-icon mui-icon-checkmarkempty"></a>
+					<a class="BoxItemTopShopName">下一个驿站1</a>
+					<a class="mui-icon mui-icon-arrowright BoxItemTopRightIcon"></a>
+				</div>
+				<li class="mui-table-view-cell mui-media BoxItem" data-index="1">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn btn_Shoucang">移至收藏夹</a>
+						<a class="mui-btn btn_del">删除</a>
+					</div>
+					<div class='mui-slider-handle'>
+						<div class="BoxItemBottom">
+							<div class="BoxItemBottomLeft">
+								<a class="chks mui-icon mui-icon-checkmarkempty"></a>
+							</div>
+							<div class="BoxItemBottomRight">
+								<img class="BoxItemBottomRightImg" src="http://t11img.yangkeduo.com/images/2018-04-03/eaf5cbe294f3336cf1b3784038e41622.jpeg" />
+								<div class="BoxItemBottomRightDetails">
+									<div class="BoxItemBottomRightDetailsName mui-ellipsis-2">闽绿新茶【送紫砂茶具带茶盘27件套 】龙井铁观音一斤多规格可选龙井铁观音一斤多规格可选龙井铁观音一斤多规格可选</div>
+									<div class="BoxItemBottomRightDetailsGuige">规格：1kg*25包/箱
+										<a class="mui-icon mui-icon-arrowdown mui-pull-right BoxItemBottomRightDetailsGuigeDown"></a>
+									</div>
+									<div class="BoxItemBottomRightDetailsPrice">
+										<a class="BoxItemBottomRightDetailsMoney">￥600.00</a>
+										<a class="mui-pull-right btn_add">+</a>
+										<input class="mui-pull-right txt_Num" type="number" value="1">
+										<a class="mui-pull-right btn_jian">-</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell mui-media BoxItem" data-index="1">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn btn_Shoucang">移至收藏夹</a>
+						<a class="mui-btn btn_del">删除</a>
+					</div>
+					<div class='mui-slider-handle'>
+						<div class="BoxItemBottom">
+							<div class="BoxItemBottomLeft">
+								<a class="chks mui-icon mui-icon-checkmarkempty"></a>
+							</div>
+							<div class="BoxItemBottomRight">
+								<img class="BoxItemBottomRightImg" src="http://t11img.yangkeduo.com/images/2018-04-03/eaf5cbe294f3336cf1b3784038e41622.jpeg" />
+								<div class="BoxItemBottomRightDetails">
+									<div class="BoxItemBottomRightDetailsName mui-ellipsis-2">闽绿新茶【送紫砂茶具带茶盘27件套 】龙井铁观音一斤多规格可选龙井铁观音一斤多规格可选龙井铁观音一斤多规格可选</div>
+									<div class="BoxItemBottomRightDetailsGuige">规格：1kg*25包/箱
+										<a class="mui-icon mui-icon-arrowdown mui-pull-right BoxItemBottomRightDetailsGuigeDown"></a>
+									</div>
+									<div class="BoxItemBottomRightDetailsPrice">
+										<a class="BoxItemBottomRightDetailsMoney">￥600.00</a>
+										<a class="mui-pull-right btn_add">+</a>
+										<input class="mui-pull-right txt_Num" type="number" value="1">
+										<a class="mui-pull-right btn_jian">-</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<div class="BoxItemTop ShopAll" data-index="2">
+					<a class="chk mui-icon mui-icon-checkmarkempty"></a>
+					<a class="BoxItemTopShopName">下一个驿站2</a>
+					<a class="mui-icon mui-icon-arrowright BoxItemTopRightIcon"></a>
+				</div>
+				<li class="mui-table-view-cell mui-media BoxItem" data-index="2">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn btn_Shoucang">移至收藏夹</a>
+						<a class="mui-btn btn_del">删除</a>
+					</div>
+					<div class='mui-slider-handle'>
+						<div class="BoxItemBottom">
+							<div class="BoxItemBottomLeft">
+								<a class="chks mui-icon mui-icon-checkmarkempty"></a>
+							</div>
+							<div class="BoxItemBottomRight">
+								<img class="BoxItemBottomRightImg" src="http://t11img.yangkeduo.com/images/2018-04-03/eaf5cbe294f3336cf1b3784038e41622.jpeg" />
+								<div class="BoxItemBottomRightDetails">
+									<div class="BoxItemBottomRightDetailsName mui-ellipsis-2">闽绿新茶【送紫砂茶具带茶盘27件套 】龙井铁观音一斤多规格可选龙井铁观音一斤多规格可选龙井铁观音一斤多规格可选</div>
+									<div class="BoxItemBottomRightDetailsGuige">规格：1kg*25包/箱
+										<a class="mui-icon mui-icon-arrowdown mui-pull-right BoxItemBottomRightDetailsGuigeDown"></a>
+									</div>
+									<div class="BoxItemBottomRightDetailsPrice">
+										<a class="BoxItemBottomRightDetailsMoney">￥600.00</a>
+										<a class="mui-pull-right btn_add">+</a>
+										<input class="mui-pull-right txt_Num" type="number" value="1">
+										<a class="mui-pull-right btn_jian">-</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell mui-media BoxItem" data-index="2">
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn btn_Shoucang">移至收藏夹</a>
+						<a class="mui-btn btn_del">删除</a>
+					</div>
+					<div class='mui-slider-handle'>
+						<div class="BoxItemBottom">
+							<div class="BoxItemBottomLeft">
+								<a class="chks mui-icon mui-icon-checkmarkempty"></a>
+							</div>
+							<div class="BoxItemBottomRight">
+								<img class="BoxItemBottomRightImg" src="http://t11img.yangkeduo.com/images/2018-04-03/eaf5cbe294f3336cf1b3784038e41622.jpeg" />
+								<div class="BoxItemBottomRightDetails">
+									<div class="BoxItemBottomRightDetailsName mui-ellipsis-2">闽绿新茶【送紫砂茶具带茶盘27件套 】龙井铁观音一斤多规格可选龙井铁观音一斤多规格可选龙井铁观音一斤多规格可选</div>
+									<div class="BoxItemBottomRightDetailsGuige">规格：1kg*25包/箱
+										<a class="mui-icon mui-icon-arrowdown mui-pull-right BoxItemBottomRightDetailsGuigeDown"></a>
+									</div>
+									<div class="BoxItemBottomRightDetailsPrice">
+										<a class="BoxItemBottomRightDetailsMoney">￥600.00</a>
+										<a class="mui-pull-right btn_add">+</a>
+										<input class="mui-pull-right txt_Num" type="number" value="1">
+										<a class="mui-pull-right btn_jian">-</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<div style="height: 70px;"></div>
+		</div>
+		<div class="footer">
+			<div class="footer-left">
+				<div class="chkAll">
+					<a class="footer-left1 mui-icon mui-icon-checkmarkempty "></a>
+					<a class="footer-left2">全选</a>
+				</div>
+			</div>
+			<div class="footer-center">
+				<div class="footer-center-top">
+					<a class="footer-center-top-left">合计:</a>
+					<a class="footer-center-top-right">￥0</a>
+				</div>
+				<div class="footer-center-bottom">不含运费</div>
+			</div>
+			<div id="gotoCalc" class="footer-right">去结算
+				<a class="count">&nbsp;(0)</a>
+			</div>
+		</div>
+		<div id="sheet3" class="mui-popover mui-popover-bottom mui-popover-action ">
+			<img class="goPingdanImg" src="http://t11img.yangkeduo.com/images/2018-04-03/eaf5cbe294f3336cf1b3784038e41622.jpeg" />
+			<div class="goPingdanDiv">
+				<div class="goPingdanMoney">￥600.00</div>
+				<div class="goPingdanSelectKuanshi">请选择&nbsp;&nbsp;款式</div>
+			</div>
+ 
+			<div class="goPingdanKuanshi">
+				<div style="float: left;width: 100%;font-size: 14px;padding-top: 10px;padding-left: 10px;">款式</div>
+				<div class="goPingdanKuanshiItem">混色满天星1000粒+肥+生根粉</div>
+				<div class="goPingdanKuanshiItem">薄荷满天星1000粒+肥+生根粉</div>
+				<div class="goPingdanKuanshiItem">淡紫色满天星1000粒+肥+生根粉</div>
+				<div class="goPingdanKuanshiItem">粉色满天星1000粒+肥+生根粉</div>
+				<div class="goPingdanKuanshiItem">红锦满天星1000粒+肥+生根粉</div>
+				<div class="goPingdanKuanshiItem">黄色满天星1000粒+肥+生根粉</div>
+				<div class="goPingdanKuanshiItem">蓝利满天星1000粒+肥+生根粉</div>
+				<div class="goPingdanKuanshiItem">宿根满天星1000粒+肥+生根粉</div>
+			</div>
+			<div class="goPingdanBtnDiv">
+				<div id="sure" class="goPingdanBtn">确定</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery.min.js"></script>
+		
+		<script>
+			mui.init();
+			//动态计算宽度
+			var width = document.documentElement.clientWidth || document.body.clientWidth;
+			//40+110为复选框以及图片的宽度
+			//170为 40+100+20（左右距离10*2）
+			$(".BoxItemBottomRightDetailsName").css("width", width - 160 + "px");
+			$(".BoxItemBottomRightDetailsGuige").css("max-width", width - 160 + "px")
+			//设置购买是已选规格div长度
+			var width = document.documentElement.clientWidth || document.body.clientWidth;
+			$(".goPingdanDiv").css("width", width - 140 + "px");
+ 
+			//删除 此处伪删 
+			var btnArray = ['确认', '取消'];
+			$('.mui-content').on('tap', '.mui-btn', function(event) {
+				var dom = $(this).parents()[1];
+				var index = $($(this).parents()[1]).attr("data-index")
+				mui.confirm('确认取消删除此商品？', '提示', btnArray, function(e) {
+					if(e.index == 0) {
+						delShop(dom, index);
+					}
+				});
+			});
+			//去结算
+			document.getElementById("gotoCalc").addEventListener("tap", function() {
+				if($(".footer-center-top-right").html().split("￥")[1] == 0) {
+					mui.toast("还未选择商品哦~");
+					return
+				}
+				mui.openWindow({
+					url: "../tab-botton-subpage/File-tap-botton-subpage-1/PlaceOrder.html",
+					id: "PlaceOrder.html"
+				})
+			})
+			//删除商品
+			function delShop(dom, index) {
+				if(dom) {
+					dom.parentNode.removeChild(dom);
+					var isMore = false;
+					mui("li").each(function() {
+						if($(this).attr("data-index") == index) {
+							isMore = true;
+						}
+					})
+					//如果该商铺没有更多商品，则删除商铺名称
+					if(!isMore) {
+						mui(".ShopAll").each(function() {
+							if($(this).attr("data-index") == index) {
+								this.parentNode.removeChild(this);
+							}
+						})
+					}
+				}
+				CalcMoney();
+			}
+			//购买数量加1
+			mui(".BoxItemBottomRightDetailsPrice").on("tap", ".btn_jian", function() {
+				if($(this).prev()[0].value == 1) {
+					mui.toast("不能再减少啦~");
+					return;
+				} else {
+					$(this).prev()[0].value = parseInt($(this).prev()[0].value) - 1;
+				}
+				CalcMoney();
+			})
+			//购买数量减1
+			mui(".BoxItemBottomRightDetailsPrice").on("tap", ".btn_add", function() {
+				$(this).next()[0].value = parseInt($(this).next()[0].value) + 1;
+				CalcMoney();
+			})
+			var guigeDom = null;
+			//规格
+			mui(".BoxItemBottom").on("tap", ".BoxItemBottomRightDetailsGuige", function() {
+				guigeDom = $(this);
+				mui('#sheet3').popover('toggle');
+			})
+			//选择款式
+			mui(".goPingdanKuanshi").on("tap", ".goPingdanKuanshiItem", function() {
+				$(".goPingdanSelectKuanshi").html("已选：" + $(this).html())
+				mui(".goPingdanKuanshiItem").each(function(e) {
+					$(this).removeClass("goPingdanKuanshiItem-Active");
+				})
+				if(mui(this)[0].classList.contains("goPingdanKuanshiItem-Active"))
+					$(this).removeClass("goPingdanKuanshiItem-Active")
+				else
+					$(this).addClass("goPingdanKuanshiItem-Active")
+			})
+			//确认款式
+			document.getElementById("sure").addEventListener("tap", function() {
+				var isActive = false;
+				var isActiveFont = null;
+				mui(".goPingdanKuanshiItem").each(function() {
+					if($(this)[0].classList.contains("goPingdanKuanshiItem-Active")) {
+						isActive = true;
+						isActiveFont = $(this).text();
+					}
+				})
+				if(isActive) {
+					mui('#sheet3').popover('toggle');
+					$(guigeDom)[0].innerHTML = isActiveFont + "<a class='mui-icon mui-icon-arrowdown mui-pull-right BoxItemBottomRightDetailsGuigeDown'></a>";
+				} else {
+					mui.toast("请选择款式");
+				}
+			})
+			//全选
+			mui(".footer").on("tap", ".chkAll", function() {
+				if(mui(this)[0].children[0].classList.contains("selectAll")) {
+					$(mui(this)[0].children[0]).removeClass("selectAll");
+					$(".chk").removeClass("selectPrice");
+					$(".chks").removeClass("selectPrice");
+				} else {
+					$(mui(this)[0].children[0]).addClass("selectAll");
+					$(".chk").addClass("selectPrice");
+					$(".chks").addClass("selectPrice");
+				}
+				CalcMoney();
+			})
+			//选择/取消某个店铺所有商品
+			mui(".BoxItemTop").on("tap", ".chk", function() {
+				var index = $(this).parents().attr("data-index");
+				if($(this)[0].classList.contains("selectPrice")) {
+					$(this).removeClass("selectPrice");
+					selectShop(false, index);
+				} else {
+					$(this).addClass("selectPrice");
+					selectShop(true, index);
+				}
+				CalcMoney();
+			})
+			//选中/取消商品
+			mui(".BoxItemBottom").on("tap", ".chks", function() {
+				var index = $($(this).parents("li")[0]).attr("data-index");
+				if($(this)[0].classList.contains("selectPrice")) {
+					$(this).removeClass("selectPrice");
+					//取消选择商品的时候取消全选
+					mui(".ShopAll").each(function() {
+						if($(this).attr("data-index") == index) {
+							$($(this)[0].children[0]).removeClass("selectPrice")
+						}
+					})
+					$(".footer-left1").removeClass("selectAll")
+				} else {
+					$(this).addClass("selectPrice");
+					if(isShopAll(index)) {
+						mui(".ShopAll").each(function() {
+							if($(this).attr("data-index") == index) {
+								$($(this)[0].children[0]).addClass("selectPrice")
+							}
+						})
+					}
+					if(isAll()) {
+						$(".footer-left1").addClass("selectAll")
+					}
+				}
+				CalcMoney();
+			})
+			//判断是否全选
+			function isAll() {
+				var result = true;
+				mui(".chk").each(function() {
+					if(!$(this)[0].classList.contains("selectPrice")) {
+						result = false;
+						return result;
+					}
+				})
+				mui(".chks").each(function() {
+					if(!$(this)[0].classList.contains("selectPrice")) {
+						result = false;
+						return result;
+					}
+				})
+				return result;
+			}
+			//判断商铺里面所有商品是否选中
+			function isShopAll(index) {
+				var result = true;
+				mui("li").each(function(i, e) {
+					if($(this).attr("data-index") == index) {
+						if(!$(this)[0].children[1].children[0].children[0].children[0].classList.contains("selectPrice")) {
+							result = false;
+							return result;
+						}
+					}
+				})
+				return result;
+			}
+			//选中/取消
+			function selectShop(isSelect, index) {
+				mui("li").each(function(i, e) {
+					if($(this).attr("data-index") == index) {
+						if(isSelect) {
+							if(!$(this)[0].children[1].children[0].children[0].children[0].classList.contains("selectPrice")) {
+								$($(this)[0].children[1].children[0].children[0].children[0]).addClass("selectPrice");
+							}
+							//如果所有复选框全部选中则选中全选
+							if(isAll()) {
+								$(".footer-left1").addClass("selectAll");
+							}
+						} else {
+							if($(this)[0].children[1].children[0].children[0].children[0].classList.contains("selectPrice")) {
+								$($(this)[0].children[1].children[0].children[0].children[0]).removeClass("selectPrice");
+							}
+							//无论什么只要取消选择则 取消全选
+							$(".footer-left1").removeClass("selectAll");
+						}
+					}
+				})
+				CalcMoney();
+			}
+			//计算总价及总个数
+			function CalcMoney() {
+				var count = 0;
+				var money = 0;
+				mui(".chks").each(function() {
+					if($(this)[0].classList.contains("selectPrice")) {
+						count++;
+						var price = $(this).parents().next()[0].children[1].children[2].children[0].innerHTML.split("￥")[1];
+						var num = $(this).parents().next()[0].children[1].children[2].children[2].value;
+						money += parseFloat(price) * num;
+					}
+					//去结算个数
+					$(".count").html("&nbsp(" + count + ")");
+					//合计
+					$(".footer-center-top-right").html("￥" + money)
+				})
+			}
+		</script>
+	</body>
+</html>

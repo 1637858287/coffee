@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+ 
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>待评价</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/icons-extra.css" rel="stylesheet" />
+		<style type="text/css">
+			.Box {
+				margin-bottom: 5px;
+			}
+			
+			.BoxTop {
+				height: 50px;
+				width: 100%;
+				background: white;
+			}
+			
+			.BoxTopImg {
+				width: 30px;
+				height: 30px;
+				float: left;
+				margin: 10px 10px;
+			}
+			
+			.BoxTopShopName {
+				float: left;
+				line-height: 50px;
+				font-size: 13px;
+			}
+			
+			.BoxTopRightIcon {
+				line-height: 50px;
+				font-size: 16px;
+				color: black;
+				padding-left: 5px;
+			}
+			
+			.BoxTopRightStatus {
+				line-height: 50px;
+				font-size: 13px;
+				color: black;
+				padding-right: 10px;
+				color: #E02D26;
+			}
+			
+			.BoxTopRightStatus:hover {
+				color: #E02D26;
+ 			}
+			
+			.BoxDetails {
+				width: 100%;
+				background: #F5F5F5;
+			}
+			
+			.BoxDetailsImg {
+				float: left;
+			}
+			
+			.BoxDetailsCenter {
+				float: left;
+			}
+			
+			.BoxDetailsCenterName {
+				color: black;
+				font-size: 13px;
+				margin-top: 10px;
+				line-height: 20px;
+				max-height: 60px;
+				overflow: hidden;
+			}
+			
+			.BoxDetailsCenterDesc {
+				font-size: 13px;
+				color: #A9A9A9;
+				margin-top: 3px;
+			}
+			
+			.BoxDetailsRight {
+				float: left;
+			}
+			
+			.BoxDetailsRightMoney {
+				font-size: 14px;
+				color: black;
+				text-align: right;
+				margin-right: 10px;
+				margin-top: 10px;
+			}
+			
+			.BoxDetailsRightCount {
+				font-size: 13px;
+				color: black;
+				text-align: right;
+				margin-right: 10px;
+				color: #A9A9A9;
+			}
+			
+			.BoxPay {
+				width: 100%;
+				background: white;
+			}
+			
+			.BoxPayRight {
+				height: 40px;
+				padding-right: 10px;
+			}
+			
+			.BoxPayLeft {
+				padding-left: 10px;
+				float: left;
+				height: 40px;
+				padding-right: 10px;
+			}
+			
+			.BoxPayLeftImgRight {
+				width: 32px;
+				height: 32px;
+				margin-top: 4px;
+				border-radius: 50%;
+			}
+			
+			.BoxPayLeftImgRightMargin {
+				margin-right: -15px;
+			}
+			
+			.BoxPayRightYF {
+				font-size: 13px;
+				color: black;
+				line-height: 40px;
+			}
+			
+			.BoxPayRightYF:hover {
+				color: black;
+			}
+			
+			.BoxPayRightMoney {
+				font-size: 14px;
+				color: black;
+				line-height: 40px;
+				padding-right: 5px;
+			}
+			
+			.BoxPayRightMoney:hover {
+				color: black;
+			}
+			
+			.BoxPayRightSF {
+				font-size: 13px;
+				color: black;
+				line-height: 40px;
+				padding-right: 3px;
+			}
+			
+			.BoxPayRightSF:hover {
+				color: black;
+			}
+			
+			.BoxPayRightIcon {
+				color: #E02D26;
+				font-size: 18px;
+				line-height: 40px;
+				padding-right: 5px;
+			}
+			
+			.BoxPayRightIcon:hover {
+				color: #E02D26;
+			}
+			
+			.BoxFooter {
+				width: 100%;
+				background: white;
+				height: 50px;
+				border-top: 1px solid #EFEFF4;
+			}
+			
+			.BoxFooterGoOrder {
+				margin-top: 5px;
+				margin-right: 10px;
+				float: right;
+				color: white;
+				height: 40px;
+				background: #E02D26;
+				width: 90px;
+				text-align: center;
+				line-height: 40px;
+				border-radius: 5px;
+				font-size: 13px;
+			}
+			
+			.BoxFooterCancelOrder {
+				margin-top: 5px;
+				margin-right: 10px;
+				float: right;
+				height: 40px;
+				background: white;
+				border: 1px solid #DDDDDD;
+				width: 90px;
+				text-align: center;
+				line-height: 40px;
+				border-radius: 5px;
+				font-size: 13px;
+			}
+			
+			.BoxFooterTimeOut {
+				margin-top: 5px;
+				margin-right: 10px;
+				float: right;
+				height: 40px;
+				width: 50px;
+				text-align: center;
+				line-height: 40px;
+				border-radius: 5px;
+				font-size: 13px;
+			}
+			
+			.footer {
+				height: 60px;
+				color: #A9A9A9;
+				line-height: 60px;
+				text-align: center;
+				font-size: 13px;
+			}
+		</style>
+	</head>
+ 
+	<body>
+		<div class="mui-content">
+			<div class="Box">
+				<div class="BoxTop">
+					<img class="BoxTopImg" src="http://imsproductionimg.yangkeduo.com/9f29e42446c81f0cef0de27b5a34829d.jpg">
+					<div class="BoxTopShopName">旋光家居专营店 </div>
+					<a class="BoxTopRightIcon mui-icon mui-icon-arrowright" style=""></a>
+					<a class="BoxTopRightStatus mui-pull-right" style="">待评价</a>
+				</div>
+				<div class="BoxDetails">
+					<img class="BoxDetailsImg" src="http://t01img.yangkeduo.com/images/2018-03-31/08a96178e05991de8edb5f3ba013cb11.jpeg">
+					<div class="BoxDetailsCenter">
+						<div class="BoxDetailsCenterName">【30粒碗莲种子+盆+荷塘泥+营养液】买2送1碗莲种子水培荷花种子 </div>
+						<div class="BoxDetailsCenterDesc">五彩椒500粒</div>
+					</div>
+					<div class="BoxDetailsRight">
+						<div class="BoxDetailsRightMoney">￥126</div>
+						<div style="" class="BoxDetailsRightCount">x1</div>
+					</div>
+				</div>
+				<div class="BoxPay">
+					<div class="BoxPayLeft">
+						<img class="BoxPayLeftImgRight" src="http://avatar.yangkeduo.com/a/eba2f59a398d049b943bd62990acb6512f1ad13f-1519996610?x-oss-process=image/resize,w_100">
+					</div>
+					<div class="BoxPayRight">
+						<a class="mui-pull-right BoxPayRightYF">(免运费)</a>
+						<a class="mui-pull-right BoxPayRightMoney">￥126</a>
+						<a class="mui-pull-right BoxPayRightSF">实付:</a>
+						<a class="BoxPayRightIcon mui-icon-extra mui-icon-extra-gold mui-pull-right"></a>
+					</div>
+				</div>
+				<div class="BoxFooter">
+					<div class="BoxFooterGoOrder">立即评价</div>
+					<div class="BoxFooterCancelOrder">再次购买</div>
+					<div class="BoxFooterTimeOut">更多</div>
+				</div>
+			</div>
+ 
+			<div class="Box">
+				<div class="BoxTop">
+					<img class="BoxTopImg" src="http://imsproductionimg.yangkeduo.com/9f29e42446c81f0cef0de27b5a34829d.jpg">
+					<div class="BoxTopShopName">旋光家居专营店 </div>
+					<a class="BoxTopRightIcon mui-icon mui-icon-arrowright" style=""></a>
+					<a class="BoxTopRightStatus mui-pull-right" style="">待评价</a>
+				</div>
+				<div class="BoxDetails">
+					<img class="BoxDetailsImg" src="http://t01img.yangkeduo.com/images/2018-03-31/08a96178e05991de8edb5f3ba013cb11.jpeg">
+					<div class="BoxDetailsCenter">
+						<div class="BoxDetailsCenterName">【30粒碗莲种子+盆+荷塘泥+营养液】买2送1碗莲种子水培荷花种子 </div>
+						<div class="BoxDetailsCenterDesc">五彩椒500粒</div>
+					</div>
+					<div class="BoxDetailsRight">
+						<div class="BoxDetailsRightMoney">￥126</div>
+						<div style="" class="BoxDetailsRightCount">x1</div>
+					</div>
+				</div>
+				<div class="BoxPay">
+					<div class="BoxPayLeft">
+						<img class="BoxPayLeftImgRight BoxPayLeftImgRightMargin" src="http://avatar.yangkeduo.com/a/40f22ae6b32d9d3e97719726931393a04942610c-1520828501?x-oss-process=image/resize,w_100">
+						<img class="BoxPayLeftImgRight" src="http://avatar.yangkeduo.com/a/eba2f59a398d049b943bd62990acb6512f1ad13f-1519996610?x-oss-process=image/resize,w_100">
+					</div>
+					<div class="BoxPayRight">
+						<a class="mui-pull-right BoxPayRightYF">(免运费)</a>
+						<a class="mui-pull-right BoxPayRightMoney">￥126</a>
+						<a class="mui-pull-right BoxPayRightSF">实付:</a>
+						<a class="BoxPayRightIcon mui-icon-extra mui-icon-extra-gold mui-pull-right"></a>
+					</div>
+				</div>
+				<div class="BoxFooter">
+					<div class="BoxFooterGoOrder">立即评价</div>
+					<div class="BoxFooterCancelOrder">再次购买</div>
+					<div class="BoxFooterTimeOut">更多</div>
+				</div>
+			</div>
+ 
+			<div class="Box">
+				<div class="BoxTop">
+					<img class="BoxTopImg" src="http://imsproductionimg.yangkeduo.com/9f29e42446c81f0cef0de27b5a34829d.jpg">
+					<div class="BoxTopShopName">旋光家居专营店 </div>
+					<a class="BoxTopRightIcon mui-icon mui-icon-arrowright" style=""></a>
+					<a class="BoxTopRightStatus mui-pull-right" style="">待评价</a>
+				</div>
+				<div class="BoxDetails">
+					<img class="BoxDetailsImg" src="http://t01img.yangkeduo.com/images/2018-03-31/08a96178e05991de8edb5f3ba013cb11.jpeg">
+					<div class="BoxDetailsCenter">
+						<div class="BoxDetailsCenterName">【30粒碗莲种子+盆+荷塘泥+营养液】买2送1碗莲种子水培荷花种子 </div>
+						<div class="BoxDetailsCenterDesc">五彩椒500粒</div>
+					</div>
+					<div class="BoxDetailsRight">
+						<div class="BoxDetailsRightMoney">￥126</div>
+						<div style="" class="BoxDetailsRightCount">x1</div>
+					</div>
+				</div>
+				<div class="BoxPay">
+					<div class="BoxPayLeft">
+						<img class="BoxPayLeftImgRight BoxPayLeftImgRightMargin" src="http://avatar.yangkeduo.com/a/40f22ae6b32d9d3e97719726931393a04942610c-1520828501?x-oss-process=image/resize,w_100">
+						<img class="BoxPayLeftImgRight" src="http://avatar.yangkeduo.com/a/eba2f59a398d049b943bd62990acb6512f1ad13f-1519996610?x-oss-process=image/resize,w_100">
+					</div>
+					<div class="BoxPayRight">
+						<a class="mui-pull-right BoxPayRightYF">(免运费)</a>
+						<a class="mui-pull-right BoxPayRightMoney">￥126</a>
+						<a class="mui-pull-right BoxPayRightSF">实付:</a>
+						<a class="BoxPayRightIcon mui-icon-extra mui-icon-extra-gold mui-pull-right"></a>
+					</div>
+				</div>
+				<div class="BoxFooter">
+					<div class="BoxFooterGoOrder">立即评价</div>
+					<div class="BoxFooterCancelOrder">再次购买</div>
+					<div class="BoxFooterTimeOut">更多</div>
+				</div>
+			</div>
+ 
+			<div class="Box">
+				<div class="BoxTop">
+					<img class="BoxTopImg" src="http://imsproductionimg.yangkeduo.com/9f29e42446c81f0cef0de27b5a34829d.jpg">
+					<div class="BoxTopShopName">旋光家居专营店 </div>
+					<a class="BoxTopRightIcon mui-icon mui-icon-arrowright" style=""></a>
+					<a class="BoxTopRightStatus mui-pull-right" style="">待评价</a>
+				</div>
+				<div class="BoxDetails">
+					<img class="BoxDetailsImg" src="http://t01img.yangkeduo.com/images/2018-03-31/08a96178e05991de8edb5f3ba013cb11.jpeg">
+					<div class="BoxDetailsCenter">
+						<div class="BoxDetailsCenterName">【30粒碗莲种子+盆+荷塘泥+营养液】买2送1碗莲种子水培荷花种子 </div>
+						<div class="BoxDetailsCenterDesc">五彩椒500粒</div>
+					</div>
+					<div class="BoxDetailsRight">
+						<div class="BoxDetailsRightMoney">￥126</div>
+						<div style="" class="BoxDetailsRightCount">x1</div>
+					</div>
+				</div>
+				<div class="BoxPay">
+					<div class="BoxPayLeft">
+						<img class="BoxPayLeftImgRight BoxPayLeftImgRightMargin" src="http://avatar.yangkeduo.com/a/40f22ae6b32d9d3e97719726931393a04942610c-1520828501?x-oss-process=image/resize,w_100">
+						<img class="BoxPayLeftImgRight" src="http://avatar.yangkeduo.com/a/eba2f59a398d049b943bd62990acb6512f1ad13f-1519996610?x-oss-process=image/resize,w_100">
+					</div>
+					<div class="BoxPayRight">
+						<a class="mui-pull-right BoxPayRightYF">(免运费)</a>
+						<a class="mui-pull-right BoxPayRightMoney">￥126</a>
+						<a class="mui-pull-right BoxPayRightSF">实付:</a>
+						<a class="BoxPayRightIcon mui-icon-extra mui-icon-extra-gold mui-pull-right"></a>
+					</div>
+				</div>
+				<div class="BoxFooter">
+					<div class="BoxFooterGoOrder">立即评价</div>
+					<div class="BoxFooterCancelOrder">再次购买</div>
+					<div class="BoxFooterTimeOut">更多</div>
+				</div>
+			</div>
+			<div class="footer">您已经没有更多订单了</div>
+		</div>
+		<script src="../js/mui.js"></script>
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<script>
+			mui.init();
+			var width = $(".BoxDetails").width();
+			var height = width * 0.25 + 20;
+			$(".BoxDetails").css("height", height);
+			$(".BoxDetailsImg").css("width", width * 0.25).css("height", width * 0.25).css("margin", "10px");
+			$(".BoxDetailsCenter").css("width", width * 0.55).css("height", height);
+			$(".BoxDetailsRight").css("width", width * 0.20 - 20).css("height", height);
+ 
+			//立即评价
+			mui(".BoxFooter").on("tap", ".BoxFooterGoOrder", function() {
+				mui.openWindow({
+					url: "GoEvaluate.html",
+					id: "GoEvaluate.html"
+				})
+			})
+			//再次购买
+			mui(".BoxFooter").on("tap", ".BoxFooterCancelOrder", function() {
+				mui.alert("再次购买");
+			})
+			//更多 
+			mui(".BoxFooter").on("tap", ".BoxFooterTimeOut", function() {
+				mui.alert("更多");
+			})
+			//进入商品详情
+			mui(".Box").on("tap", ".BoxDetails", function() {
+				mui.openWindow({
+					url: "/tab-botton-subpage/File-tap-botton-subpage-1/DetailsItem.html",
+					id: "DetailsItem.html"
+				})
+			})
+			mui.plusReady(function() {
+				// 获取当前窗口对象
+				var self = plus.webview.currentWebview();
+				// 读取传递过来的参数
+				var index = 5;
+				/**
+				 * 获取父窗口对象 
+				 */
+				var parent = self.parent();
+				// 左滑事件
+				document.addEventListener("swipeleft", function(event) {
+					var angle = event.detail.angle;
+					angle = Math.abs(angle);
+					/**
+					 * 控制滑动的角度，为避免误操作，可自定义限制滑动角度；
+					 */
+					if(angle > 170 && angle < 185) {
+						parentEvent(parent, index, "left");
+					}
+				});
+				// 右滑事件
+				document.addEventListener("swiperight", function(event) {
+					var angle = event.detail.angle;
+					angle = Math.abs(angle);
+					/**
+					 * 控制滑动的角度，为避免误操作，可自定义限制滑动角度；
+					 */
+					if(angle < 10) {
+						parentEvent(parent, index, "right");
+					}
+				});
+			});
+ 
+			/**
+			 * 触发父窗口自定义事件
+			 * @param {Object} wvobj 目标窗口对象
+			 * @param {Number} index 索引值
+			 * @param {String} direction 方向
+			 */
+			function parentEvent(wvobj, index, direction) {
+				/**
+				 * 触发自定义事件
+				 * http://dev.dcloud.net.cn/mui/event/#customevent
+				 */
+				mui.fire(wvobj, "swipe_event", {
+					direction: direction,
+					index: index
+				});
+			}
+		</script>
+	</body>
+ 
+</html>
