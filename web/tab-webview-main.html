@@ -9,6 +9,7 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../css/icons-extra.css">
 		<style>
 			html,
 			body {
@@ -19,26 +20,22 @@
 			}
 		</style>
 	</head>
-
 	<body>
-		<!--<header class="mui-bar mui-bar-nav">
-			<h1 id="title" class="mui-title"">pepsi coffee</h1>
-		</header>-->
 		<nav class="mui-bar mui-bar-tab">
 			<a id="defaultTab" class="mui-tab-item mui-active" href="tab-webview-subpage-about.html">
 				<span class="mui-icon mui-icon-home"></span>
 				<span class="mui-tab-label">首页</span>
 			</a>
 			<a class="mui-tab-item" href="tab-webview-subpage-chat.html">
-				<span class="mui-icon mui-icon-email"></span>
+				<span class="mui-icon mui-icon-list"></span>
 				<span class="mui-tab-label">菜单</span>
 			</a>
-			<a class="mui-tab-item" href="tab-webview-subpage-contact.html">
-				<span class="mui-icon mui-icon-contact"></span>
+			<a class="mui-tab-item" href="tab-webview-subpage-order.html">
+				<span class="mui-icon mui-icon-extra mui-icon-extra-cold"></span>
 				<span class="mui-tab-label">订单</span>
 			</a>
-			<a class="mui-tab-item" href="tab-webview-subpage-setting.html">
-				<span class="mui-icon mui-icon-gear"></span>
+			<a class="mui-tab-item" href="tab-webview-subpage-contact.html">
+				<span class="mui-icon mui-icon-extra mui-icon-extra-cart"></span>
 				<span class="mui-tab-label">购物车</span>
 			</a>
 			<a class="mui-tab-item" href="tab-webview-subpage-setting.html">
@@ -47,12 +44,13 @@
 			</a>
 		</nav>
 		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery.min.js"></script>
 		<script type="text/javascript" charset="utf-8">
 			 //mui初始化
 			mui.init();
-			var subpages = ['tab-webview-subpage-about.html', 'tab-webview-subpage-chat.html', 'tab-webview-subpage-contact.html', 'tab-webview-subpage-setting.html'];
+			var subpages = ['tab-webview-subpage-about.html', 'tab-webview-subpage-chat.html', 'tab-webview-subpage-order.html', 'tab-webview-subpage-contact.html' ,'tab-webview-subpage-setting.html'];
 			var subpage_style = {
-				top: '45px',
+				top:'0px',
 				bottom: '51px'
 			};
 			
@@ -61,7 +59,7 @@
 			 //创建子页面，首个选项卡页面显示，其它均隐藏；
 			mui.plusReady(function() {
 				var self = plus.webview.currentWebview();
-				for (var i = 0; i < 4; i++) {
+				for (var i = 0; i < 5; i++) {
 					var temp = {};
 					var sub = plus.webview.create(subpages[i], subpages[i], subpage_style);
 					if (i > 0) {
@@ -83,7 +81,7 @@
 					return;
 				}
 				//更换标题
-				title.innerHTML = this.querySelector('.mui-tab-label').innerHTML;
+				//title.innerHTML = this.querySelector('.mui-tab-label').innerHTML;
 				//显示目标选项卡
 				//若为iOS平台或非首次显示，则直接显示
 				if(mui.os.ios||aniShow[targetTab]){
