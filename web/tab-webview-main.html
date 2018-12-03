@@ -24,10 +24,10 @@
 	<body>
 		<nav class="mui-bar mui-bar-tab">
 			<a id="defaultTab" class="mui-tab-item mui-active" href="tab-webview-subpage-about.html">
-				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-icon mui-icon-home" ></span>
 				<span class="mui-tab-label">首页</span>
 			</a>
-			<a class="mui-tab-item" href="tab-webview-subpage-chat.html">
+			<a id="buyTab" class="mui-tab-item" href="tab-webview-subpage-chat.html">
 				<span class="mui-icon mui-icon-list"></span>
 				<span class="mui-tab-label">菜单</span>
 			</a>
@@ -48,18 +48,19 @@
 		<script type="text/javascript" charset="utf-8">
 			 //mui初始化
 			mui.init();
-			var subpages = ['tab-webview-subpage-about.html', 'tab-webview-subpage-chat.html', 'tab-webview-subpage-contact.html', 'tab-webview-subpage-setting.html'];
+			var subpages = ['tab-webview-subpage-about.html', 'tab-webview-subpage-chat.html','tab-webview-subpage-order.html', 'tab-webview-subpage-contact.html', 'tab-webview-subpage-setting.html'];
 			var subpage_style = {
-				top: '45px',
+				top: '0px',
 				bottom: '51px'
 			};
 			
+
 			var aniShow = {};
 			
 			 //创建子页面，首个选项卡页面显示，其它均隐藏；
 			mui.plusReady(function() {
 				var self = plus.webview.currentWebview();
-				for (var i = 0; i < 4; i++) {
+				for (var i = 0; i < 5; i++) {
 					var temp = {};
 					var sub = plus.webview.create(subpages[i], subpages[i], subpage_style);
 					if (i > 0) {
@@ -81,7 +82,7 @@
 					return;
 				}
 				//更换标题
-				title.innerHTML = this.querySelector('.mui-tab-label').innerHTML;
+				//title.innerHTML = this.querySelector('.mui-tab-label').innerHTML;
 				//显示目标选项卡
 				//若为iOS平台或非首次显示，则直接显示
 				if(mui.os.ios||aniShow[targetTab]){
@@ -98,6 +99,8 @@
 				//更改当前活跃的选项卡
 				activeTab = targetTab;
 			});
+			
+			
 			 //自定义事件，模拟点击“首页选项卡”
 			document.addEventListener('gohome', function() {
 				var defaultTab = document.getElementById("defaultTab");
@@ -110,6 +113,7 @@
 					defaultTab.classList.add('mui-active');
 				}
 			});
+			
 		</script>
 	</body>
 

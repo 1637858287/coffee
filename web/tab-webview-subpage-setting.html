@@ -14,6 +14,7 @@
 			body {
 				background-color: #efeff4;
 			}
+
 			.mui-views,
 			.mui-view,
 			.mui-pages,
@@ -28,26 +29,32 @@
 				height: 100%;
 				background-color: #efeff4;
 			}
+
 			.mui-pages {
 				top: 46px;
 				height: auto;
 			}
+
 			.mui-scroll-wrapper,
 			.mui-scroll {
 				background-color: #efeff4;
 			}
+
 			.mui-page.mui-transitioning {
 				-webkit-transition: -webkit-transform 300ms ease;
 				transition: transform 300ms ease;
 			}
+
 			.mui-page-left {
 				-webkit-transform: translate3d(0, 0, 0);
 				transform: translate3d(0, 0, 0);
 			}
+
 			.mui-ios .mui-page-left {
 				-webkit-transform: translate3d(-20%, 0, 0);
 				transform: translate3d(-20%, 0, 0);
 			}
+
 			.mui-navbar {
 				position: fixed;
 				right: 0;
@@ -56,29 +63,35 @@
 				height: 44px;
 				background-color: #f7f7f8;
 			}
+
 			.mui-navbar .mui-bar {
 				position: absolute;
 				background: transparent;
 				text-align: center;
 			}
+
 			.mui-android .mui-navbar-inner.mui-navbar-left {
 				opacity: 0;
 			}
+
 			.mui-ios .mui-navbar-left .mui-left,
 			.mui-ios .mui-navbar-left .mui-center,
 			.mui-ios .mui-navbar-left .mui-right {
 				opacity: 0;
 			}
+
 			.mui-navbar .mui-btn-nav {
 				-webkit-transition: none;
 				transition: none;
 				-webkit-transition-duration: .0s;
 				transition-duration: .0s;
 			}
+
 			.mui-navbar .mui-bar .mui-title {
 				display: inline-block;
 				width: auto;
 			}
+
 			.mui-page-shadow {
 				position: absolute;
 				right: 100%;
@@ -88,52 +101,65 @@
 				z-index: -1;
 				content: '';
 			}
+
 			.mui-page-shadow {
 				background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);
 				background: linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);
 			}
+
 			.mui-navbar-inner.mui-transitioning,
 			.mui-navbar-inner .mui-transitioning {
 				-webkit-transition: opacity 300ms ease, -webkit-transform 300ms ease;
 				transition: opacity 300ms ease, transform 300ms ease;
 			}
+
 			.mui-page {
 				display: none;
 			}
+
 			.mui-pages .mui-page {
 				display: block;
 			}
+
 			.mui-page .mui-table-view:first-child {
 				margin-top: 15px;
 			}
+
 			.mui-page .mui-table-view:last-child {
 				margin-bottom: 30px;
 			}
+
 			.mui-table-view {
 				margin-top: 20px;
 			}
-			
+
 			.mui-table-view span.mui-pull-right {
 				color: #999;
 			}
+
 			.mui-table-view-divider {
 				background-color: #efeff4;
 				font-size: 14px;
 			}
+
 			.mui-table-view-divider:before,
 			.mui-table-view-divider:after {
 				height: 0;
 			}
+
 			.head {
 				height: 40px;
 			}
+
 			#head {
 				line-height: 40px;
 			}
+
 			.head-img {
 				width: 40px;
 				height: 40px;
 			}
+
 			#head-img1 {
 				position: absolute;
 				bottom: 10px;
@@ -141,40 +167,51 @@
 				width: 40px;
 				height: 40px;
 			}
+
 			.update {
 				font-style: normal;
 				color: #999999;
 				margin-right: -25px;
 				font-size: 15px
 			}
+
 			.mui-fullscreen {
 				position: fixed;
 				z-index: 20;
 				background-color: #000;
 			}
+
 			.mui-ios .mui-navbar .mui-bar .mui-title {
 				position: static;
 			}
+
 			/*问题反馈在setting页面单独的css*/
-			#feedback .mui-popover{
+			#feedback .mui-popover {
 				position: fixed;
 			}
+
 			#feedback .mui-table-view:last-child {
-			    margin-bottom: 0px;
+				margin-bottom: 0px;
 			}
+
 			#feedback .mui-table-view:first-child {
-			    margin-top: 0px;
+				margin-top: 0px;
 			}
-			
-			.mui-plus.mui-plus-stream .mui-stream-hidden{
+
+			.mui-plus.mui-plus-stream .mui-stream-hidden {
 				display: none !important;
 			}
-			img{
+
+			img {
 				width: 100%;
 			}
-			
+
+			li {
+				list-style-type: none;
+			}
+
+
 			/*问题反馈在setting页面单独的css==end*/
-			
 		</style>
 		<link rel="stylesheet" type="text/css" href="../css/feedback.css" />
 	</head>
@@ -228,7 +265,7 @@
 								<a href="#about" class="mui-navigate-right">关于coffee<i class="mui-pull-right update"></i></a>
 							</li>
 						</ul>
-						
+
 						<ul class="mui-table-view mui-table-view-chevron">
 							<img src="../images/coffee001.jpg">
 						</ul>
@@ -256,10 +293,10 @@
 						<ul class="mui-table-view">
 							<li class="mui-table-view-cell">
 								<a id="head" class="mui-navigate-right">头像
-								<span class="mui-pull-right head">
-									<img class="head-img mui-action-preview" id="head-img1" src=""/>
-								</span>
-							</a>
+									<span class="mui-pull-right head">
+										<img class="head-img mui-action-preview" id="head-img1" src="" />
+									</span>
+								</a>
 							</li>
 							<li class="mui-table-view-cell">
 								<a>姓名<span class="mui-pull-right">Hbuilder</span></a>
@@ -288,87 +325,32 @@
 				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
 					<span class="mui-icon mui-icon-left-nav"></span>设置
 				</button>
-				<h1 class="mui-center mui-title">新消息通知</h1>
+				<h1 class="mui-center mui-title">收货地址</h1>
 			</div>
 			<div class="mui-page-content">
-				<div class="mui-scroll-wrapper">
-					<div class="mui-scroll">
-						<ul class="mui-table-view">
-							<li class="mui-table-view-cell">
-								<a>接收新消息通知<span class="mui-pull-right">已开启</span></a>
-							</li>
-						</ul>
-						<ul class="mui-table-view">
-							<li class="mui-table-view-cell">
-								通知显示消息详情
-								<div class="mui-switch mui-active mui-switch-mini">
-									<div class="mui-switch-handle"></div>
-								</div>
-							</li>
-						</ul>
-						<div class="mui-content-padded">
-							<p>若关闭，当收到新消息时，通知提示将不显示发信人和内容摘要</p>
-						</div>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-cell">
+						<div class="oa-contact-cell mui-table">
+							<div class="oa-contact-content mui-table-cell">
+								<div class="mui-clearfix">
+									<h4 class="oa-contact-name" id="adress">pepsi国科园店</h4>
+									<span class="oa-contact-position mui-h6"></span>
 
-						<ul class="mui-table-view mui-table-view-chevron">
-							<li class="mui-table-view-cell">
-								<a href="#notifications_disturb" class="mui-navigate-right">功能消息免打扰</a>
-							</li>
-						</ul>
-						<div class="mui-content-padded">
-							<p>设置系统功能消息提示声音和震动的时段</p>
-						</div>
-						<ul class="mui-table-view">
-							<li class="mui-table-view-cell">
-								<a>接收新消息通知<span class="mui-pull-right">已开启</span></a>
-							</li>
-						</ul>
-						<ul class="mui-table-view">
-							<li class="mui-table-view-cell">
-								声音
-								<div class="mui-switch mui-active mui-switch-mini">
-									<div class="mui-switch-handle"></div>
 								</div>
-							</li>
-							<li class="mui-table-view-cell">
-								震动
-								<div class="mui-switch mui-active mui-switch-mini">
-									<div class="mui-switch-handle"></div>
+								<p class="oa-contact-email mui-h6" >
+									15136845645 王先生
+								</p>
+								<div>
+									<button id='delete' type="button" class="mui-btn mui-btn-blue mui-btn-outlined" style="float: right;">删除</button>
+									<button id='edit' type="button" class="mui-btn mui-btn-blue mui-btn-outlined" style="float: right;">修改</button>
+									<!--<div id="info"></div>-->
 								</div>
-							</li>
-						</ul>
-						<div class="mui-content-padded">
-							<p>当HelloMUI在运行时，你可以设置是否需要声音或者震动</p>
+							</div>
 						</div>
-						<div></div>
 					</div>
-				</div>
+				</li>
 			</div>
 		</div>
-		<div id="notifications_disturb" class="mui-page">
-			<div class="mui-navbar-inner mui-bar mui-bar-nav">
-				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
-					<span class="mui-icon mui-icon-left-nav"></span>新消息通知
-				</button>
-				<h1 class="mui-center mui-title">功能消息免打扰</h1>
-			</div>
-			<div class="mui-page-content">
-				<div class="mui-scroll-wrapper">
-					<div class="mui-scroll">
-						<ul class="mui-table-view mui-table-view-radio">
-							<li class="mui-table-view-cell">
-								<a class="mui-navigate-right">开启</a>
-							</li>
-							<li class="mui-table-view-cell">
-								<a class="mui-navigate-right">只在夜间开启</a>
-							</li>
-							<li class="mui-table-view-cell">
-								<a class="mui-navigate-right">关闭</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
 		</div>
 		<div id="about" class="mui-page">
 			<div class="mui-navbar-inner mui-bar mui-bar-nav">
@@ -381,23 +363,11 @@
 				<div class="mui-scroll-wrapper">
 					<div class="mui-scroll">
 						<ul class="mui-table-view">
-							<li class="mui-table-view-cell mui-plus-visible mui-stream-hidden">
-								<a id="rate" class="mui-navigate-right">评分鼓励</a>
-							</li>
-							<li class="mui-table-view-cell mui-plus-visible">
-								<a id="welcome" class="mui-navigate-right">欢迎页</a>
-							</li>
-							<li class="mui-table-view-cell mui-plus-visible">
-								<a id="share" class="mui-navigate-right">分享推荐</a>
-							</li>
 							<li class="mui-table-view-cell">
 								<a id="tel" class="mui-navigate-right">客服电话</a>
 							</li>
 							<li class="mui-table-view-cell">
 								<a id="feedback-btn" href="#feedback" class="mui-navigate-right">问题反馈</a>
-							</li>
-							<li id="check_update" class="mui-table-view-cell mui-plus-visible">
-								<a id="update" class="mui-navigate-right">检查更新</a>
 							</li>
 						</ul>
 					</div>
@@ -441,7 +411,7 @@
 				<div class="row mui-input-row">
 					<textarea id='question' class="mui-input-clear question" placeholder="请详细描述你的问题和意见..."></textarea>
 				</div>
-				
+
 				<p>QQ/邮箱</p>
 				<div class="mui-input-row">
 					<input id='contact' type="text" class="mui-input-clear contact" placeholder="(选填,方便我们联系你 )" />
@@ -463,6 +433,7 @@
 	<script src="../js/mui.min.js "></script>
 	<script src="../js/mui.view.js "></script>
 	<script src='../js/feedback.js'></script>
+	<script src="../js/jquery.min.js"></script>
 	<script>
 		mui.init();
 		//初始化单页view
@@ -473,7 +444,7 @@
 		mui('.mui-scroll-wrapper').scroll();
 		//分享操作
 		var shares = {};
-		
+
 		mui.plusReady(function() {
 			plus.share.getServices(function(s) {
 				if (s && s.length > 0) {
@@ -486,25 +457,52 @@
 				console.log("获取分享服务列表失败");
 			});
 		});
-		
-		setTimeout(function () {
+
+		setTimeout(function() {
 			defaultImg();
 			setTimeout(function() {
-				initImgPreview();
+				//initImgPreview();
 			}, 300);
-		},500);
-		
-		
+		}, 500);
+
+
 		//客服电话
 		document.getElementById("tel").addEventListener('tap', function() {
-			if(mui.os.plus){
+			if (mui.os.plus) {
 				plus.device.dial("114");
-			}else{
+			} else {
 				location.href = 'tel:114';
 			}
-			
+
 		});
-		
+
+		var info = document.getElementById("adress");
+		document.getElementById("edit").addEventListener('tap', function(e) {
+			e.detail.gesture.preventDefault(); //修复iOS 8.x平台存在的bug，使用plus.nativeUI.prompt会造成输入法闪一下又没了
+			var btnArray = ['取消', '确定'];
+			mui.prompt('', '', '请输入新地址', btnArray, function(e) {
+				if (e.index == 1) {
+					info.innerText = e.value;
+				} else {
+				
+				}
+			})
+		});
+
+
+		//确认删除按钮
+		document.getElementById("delete").addEventListener('tap', function() {
+			var btnArray = ['否', '是'];
+			mui.confirm('', '确认删除地址？', btnArray, function(e) {
+				if (e.index == 1) {
+					//info.innerText = '你刚确认MUI是个好框架';
+				} else {
+					//info.innerText = 'MUI没有得到你的认可，继续加油'
+				}
+			})
+		});
+
+
 		var view = viewApi.view;
 		(function($) {
 			//处理view的后退与webview后退
@@ -516,7 +514,7 @@
 					oldBack();
 				}
 			};
-			
+
 			//监听页面切换事件方案1,通过view元素监听所有页面切换事件，目前提供pageBeforeShow|pageShow|pageBeforeBack|pageBack四种事件(before事件为动画开始前触发)
 			//第一个参数为事件名称，第二个参数为事件回调，其中e.detail.page为当前页面的html对象
 			view.addEventListener('pageBeforeShow', function(e) {
@@ -534,7 +532,7 @@
 		})(mui);
 		//更换头像
 		mui(".mui-table-view-cell").on("tap", "#head", function(e) {
-			if(mui.os.plus){
+			if (mui.os.plus) {
 				var a = [{
 					title: "拍照"
 				}, {
@@ -557,12 +555,13 @@
 						default:
 							break
 					}
-				})	
+				})
 			}
-			
+
 		});
+
 		function defaultImg() {
-			if(mui.os.plus){
+			if (mui.os.plus) {
 				plus.io.resolveLocalFileSystemURL("_doc/head.jpg", function(entry) {
 					var s = entry.fullPath + "?version=" + new Date().getTime();;
 					document.getElementById("head-img").src = s;
@@ -571,16 +570,16 @@
 					document.getElementById("head-img").src = '../images/logo.png';
 					document.getElementById("head-img1").src = '../images/logo.png';
 				})
-			}else{
+			} else {
 				document.getElementById("head-img").src = '../images/logo.png';
 				document.getElementById("head-img1").src = '../images/logo.png';
 			}
-			
+
 		}
 		document.getElementById("head-img1").addEventListener('tap', function(e) {
 			e.stopPropagation();
 		});
-		document.getElementById("welcome").addEventListener('tap', function(e) {
+		/* document.getElementById("welcome").addEventListener('tap', function(e) {
 			//显示启动导航
 			mui.openWindow({
 				id: 'guide',
@@ -593,13 +592,12 @@
 					autoShow: false
 				}
 			});
-		});
+		}); */
 
-		
-		if(mui.os.stream){
+
+		if (mui.os.stream) {
 			document.getElementById("check_update").display = "none";
 		}
-		
 	</script>
 
 </html>

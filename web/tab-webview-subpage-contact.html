@@ -208,7 +208,7 @@
 			}
 			
 			.BoxItemBottomRightImg {
-				height: 100px;
+				height: 60px;
 				width: 100px;
 				margin-top: 10px;
 				float: left;
@@ -458,10 +458,6 @@
 	</head>
  
 	<body>
-		<header class="mui-bar mui-bar-nav">
-			<h1 class="mui-title">购物车</h1>
-			<!--<a id="Edit" class="mui-icon mui-pull-right">编辑</a>-->
-		</header>
 		<div class="mui-content">
 			<ul class="mui-table-view">
 				<div class="BoxItemTop ShopAll" data-index="1">
@@ -480,14 +476,14 @@
 								<a class="chks mui-icon mui-icon-checkmarkempty"></a>
 							</div>
 							<div class="BoxItemBottomRight">
-								<img class="BoxItemBottomRightImg" src="http://t11img.yangkeduo.com/images/2018-04-03/eaf5cbe294f3336cf1b3784038e41622.jpeg" />
+								<img class="BoxItemBottomRightImg" src="../images/coffee001.jpg" />
 								<div class="BoxItemBottomRightDetails">
-									<div class="BoxItemBottomRightDetailsName mui-ellipsis-2">闽绿新茶【送紫砂茶具带茶盘27件套 】龙井铁观音一斤多规格可选龙井铁观音一斤多规格可选龙井铁观音一斤多规格可选</div>
-									<div class="BoxItemBottomRightDetailsGuige">规格：1kg*25包/箱
-										<a class="mui-icon mui-icon-arrowdown mui-pull-right BoxItemBottomRightDetailsGuigeDown"></a>
+									<div class="BoxItemBottomRightDetailsName mui-ellipsis-2">拿铁咖啡</div>
+									<div class="BoxItemBottomRightDetailsGuige">规格：大杯/无糖/无奶/热
+										<a class="mui-icon BoxItemBottomRightDetailsGuigeDown"></a>
 									</div>
 									<div class="BoxItemBottomRightDetailsPrice">
-										<a class="BoxItemBottomRightDetailsMoney">￥600.00</a>
+										<a class="BoxItemBottomRightDetailsMoney">￥21.00</a>
 										<a class="mui-pull-right btn_add">+</a>
 										<input class="mui-pull-right txt_Num" type="number" value="1">
 										<a class="mui-pull-right btn_jian">-</a>
@@ -610,20 +606,14 @@
 		<div id="sheet3" class="mui-popover mui-popover-bottom mui-popover-action ">
 			<img class="goPingdanImg" src="http://t11img.yangkeduo.com/images/2018-04-03/eaf5cbe294f3336cf1b3784038e41622.jpeg" />
 			<div class="goPingdanDiv">
-				<div class="goPingdanMoney">￥600.00</div>
+				<div class="goPingdanMoney">￥21.00</div>
 				<div class="goPingdanSelectKuanshi">请选择&nbsp;&nbsp;款式</div>
 			</div>
  
 			<div class="goPingdanKuanshi">
 				<div style="float: left;width: 100%;font-size: 14px;padding-top: 10px;padding-left: 10px;">款式</div>
-				<div class="goPingdanKuanshiItem">混色满天星1000粒+肥+生根粉</div>
-				<div class="goPingdanKuanshiItem">薄荷满天星1000粒+肥+生根粉</div>
-				<div class="goPingdanKuanshiItem">淡紫色满天星1000粒+肥+生根粉</div>
-				<div class="goPingdanKuanshiItem">粉色满天星1000粒+肥+生根粉</div>
-				<div class="goPingdanKuanshiItem">红锦满天星1000粒+肥+生根粉</div>
-				<div class="goPingdanKuanshiItem">黄色满天星1000粒+肥+生根粉</div>
-				<div class="goPingdanKuanshiItem">蓝利满天星1000粒+肥+生根粉</div>
-				<div class="goPingdanKuanshiItem">宿根满天星1000粒+肥+生根粉</div>
+				<div class="goPingdanKuanshiItem">大杯/无糖/无奶/热</div>
+				<div class="goPingdanKuanshiItem">小杯/无糖/无奶/热</div>
 			</div>
 			<div class="goPingdanBtnDiv">
 				<div id="sure" class="goPingdanBtn">确定</div>
@@ -631,7 +621,6 @@
 		</div>
 		<script src="../js/mui.min.js"></script>
 		<script src="../js/jquery.min.js"></script>
-		
 		<script>
 			mui.init();
 			//动态计算宽度
@@ -704,10 +693,10 @@
 			})
 			var guigeDom = null;
 			//规格
-			mui(".BoxItemBottom").on("tap", ".BoxItemBottomRightDetailsGuige", function() {
-				guigeDom = $(this);
-				mui('#sheet3').popover('toggle');
-			})
+// 			mui(".BoxItemBottom").on("tap", ".BoxItemBottomRightDetailsGuige", function() {
+// 				guigeDom = $(this);
+// 				mui('#sheet3').popover('toggle');
+// 			})
 			//选择款式
 			mui(".goPingdanKuanshi").on("tap", ".goPingdanKuanshiItem", function() {
 				$(".goPingdanSelectKuanshi").html("已选：" + $(this).html())

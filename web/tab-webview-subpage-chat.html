@@ -16,7 +16,7 @@
 			.mui-row.mui-fullscreen>[class*="mui-col-"] {
 				height: 100%;
 			}
-
+			
 			.mui-col-xs-3,
 			.mui-col-xs-9 {
 				overflow-y: auto;
@@ -36,28 +36,28 @@
 				background-color: #fff;
 			}
 
-			img {
-				width: 100%;
+			.title-img {
+				width:100%;
 			}
-
-			.mui-bar .mui-title {
-				right: auto;
-				font-size: 20px;
-
+			.mui-table{
+				margin-top: 5px;
+			}
+			.mui-table-cell{
+				width: 60px;
+				height: 90px;
+			}
+			.mui-content>.mui-table-view:first-child{
+				margin-top: 0px;
 			}
 		</style>
 	</head>
 
 	<body>
-		<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon  mui-pull-left"></a>
-			<h1 class="mui-title">pepsi coffee</h1>
-		</header>
 		<div class="mui-content mui-row mui-fullscreen">
 			<ul class="mui-table-view mui-table-view-striped mui-table-view-condensed">
 				<li class="mui-table-view-cell mui-media">
 					<a href="javascript:;">
-						<img class="mui-media-object mui-pull-left" src="../images/shuijiao.jpg">
+						<img class="mui-media-object mui-pull-left " src="../images/shuijiao.jpg">
 						<div class="mui-media-body">
 							港华大厦店
 							<p class='mui-ellipsis'>距您1.0KM</p>
@@ -65,10 +65,9 @@
 						</div>
 					</a>
 				</li>
-				<li class="mui-table-view-cell mui-media">
-					<img src="../images/coffee001.jpg">
+				<li class="mui-table-view-cell mui-media ">
+					<img class="title-img" src="../images/coffee001.jpg">
 				</li>
-
 			</ul>
 
 
@@ -99,8 +98,28 @@
 			for (i = 1; i < m; i++) {
 				html.push('<div id="content' + i + '" class="mui-control-content"><ul class="mui-table-view">');
 				for (j = 1; j < n; j++) {
-					html.push('<li class="mui-table-view-cell">第' + i + '个选项卡子项-' + j + '</li>');
-				}
+					//html.push('<li class="mui-table-view-cell">第' + i + '个选项卡子项-' + j + '</li>');
+					//html.push('<li class="mui-table-view-cell" ');
+					html.push('<div class="mui-slider-cell">');
+					html.push('<div class="oa-contact-cell mui-table">');
+					html.push('<div class="oa-contact-avatar mui-table-cell">');
+					html.push('<img src="../images/coffee001.jpg" height=90px width=60px/>');
+					html.push('</div>');
+					//html.push('<div class="oa-contact-content mui-table-cell">');');
+					html.push('<div class="mui-clearfix">');
+					html.push('<h4 class="oa-contact-name">标准美式</h4>');
+					html.push('<h5 class="oa-contact-name">Americano</h5>');
+					html.push('<h5 class="oa-contact-name">默认：大/无糖/无奶/热</h5>');
+					html.push('<span class="oa-contact-position mui-h6"></span>');
+					html.push('</div>');
+					html.push('<h4 class="oa-contact-name">');
+					html.push('￥21');
+					html.push('</h4>');
+					html.push('</div>');
+					html.push('</div>');
+					html.push('</div>');
+					html.push('</li>');
+				} 
 				html.push('</ul></div>');
 			}
 			contents.innerHTML = html.join('');
